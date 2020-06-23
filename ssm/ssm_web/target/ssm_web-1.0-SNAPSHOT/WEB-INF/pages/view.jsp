@@ -12,7 +12,7 @@
     <title>显示</title>
 </head>
 <body>
-    <c:forEach var="product" items="${product}">
+    <c:forEach var="product" items="${productList}">
         ${product.productNum}&nbsp;&nbsp;
         ${product.productName}<br>
     </c:forEach>
