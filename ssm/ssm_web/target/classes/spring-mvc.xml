@@ -19,7 +19,7 @@
     <!--配置视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver" id="viewResolver">
         <!--jsp文件所在-->
-        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="prefix" value="/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
@@ -31,6 +31,19 @@
 
     <!--开启springmvc注解-->
     <mvc:annotation-driven/>
+
+    <!-- 配置配置类型转换器注解驱动 -->
+    <mvc:annotation-driven conversion-service="conversionService" />
+
+    <!-- 配置类型转换器 -->
+    <bean id="conversionService"
+          class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+        <property name="converters">
+            <set>
+                <bean class="com.newbie.controller.DateConverter" />
+            </set>
+        </property>
+    </bean>
 
     <aop:aspectj-autoproxy proxy-target-class="true"/>
 </beans>

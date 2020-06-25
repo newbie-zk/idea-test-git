@@ -64,7 +64,7 @@
                     <ul class="treeview-menu">
 
                         <li id="order-manage">
-                            <a href="all-order-manage-list.html">
+                            <a href="${pageContext.request.contextPath}/product/findAll.do">
                                 <i class="fa fa-circle-o"></i> 产品管理
                             </a>
                         </li>
